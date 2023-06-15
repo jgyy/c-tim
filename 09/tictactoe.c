@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
 
 char square[10] = {'o', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 int choice, player;
@@ -13,11 +12,13 @@ int main()
 {
     int gameStatus;
     char mark;
+
     player = 1;
 
     do
     {
         displayBoard();
+
         player = (player % 2) ? 1 : 2;
 
         printf("Player %d, enter a number: ", player);
@@ -26,9 +27,13 @@ int main()
         mark = (player == 1) ? 'X' : 'O';
 
         markBoard(mark);
+
         gameStatus = checkForWin();
+
         player++;
     } while (gameStatus == -1);
+
+    displayBoard();
 
     if (gameStatus == 1)
         printf("==>\aPlayer %d win ", --player);
@@ -70,7 +75,7 @@ int checkForWin()
 
 void displayBoard()
 {
-    system("cls");
+    system("clear");
     printf("\n\n\tTic Tac Toe\n\n");
 
     printf("Player 1 (X) - Player 2 (O)\n\n\n");
@@ -116,6 +121,6 @@ void markBoard(char mark)
         printf("Invalid move ");
 
         player--;
-        getch();
+        getchar();
     }
 }
