@@ -6,5 +6,5 @@ C Programming will increase career options. Become a better dev in other languag
 
 ```sh
 # Assuming user have already install gcc;
-gcc -o main .\main.c; .\main.exe;
+gcc -o main .\main.c; .\main;
 ```
